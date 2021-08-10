@@ -31,7 +31,7 @@
                   <label for="inputCPF" class="control-label">Informar o CPF:</label>
                 </div>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required="">
+                  <input type="text" name="cpf" class="form-control" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
                 </div>
               </div>
               <div class="form-group">
@@ -39,7 +39,7 @@
                   <label for="inputCURSO" class="control-label">Informar o CURSO:</label>
                 </div>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" id="inputCURSO" placeholder="CURSO">
+                  <input type="number" name="cdcurso" class="form-control" id="inputCURSO" placeholder="CURSO" required>
                 </div>
               </div>
               <div class="form-group">
@@ -47,14 +47,10 @@
                   <label for="inputDATA" class="control-label">Informar a NOVA DATA DE INSCRIÇÃO:</label>
                 </div>
                 <div class="col-sm-9">
-                  <input type="date" class="form-control" id="inputDATA" title="Preencha o campo Nome" required="">
+                  <input type="date" name="datainscricao" class="form-control" id="inputDATA" title="Preencha o campo Nome" required>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-10">
                   <button type="submit" class="btn btn-danger">Alterar</button>
-                </div>
-              </div>
             </form>
           </div>
         </div>

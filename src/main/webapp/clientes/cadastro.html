@@ -20,7 +20,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; CLIENTES - CONSULTAR UM NOVO CLIENTE &lt;&lt;</h3>
+            <h3 class="tt_menu">&gt;&gt; CLIENTES - Cadastro &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
@@ -31,7 +31,7 @@
                   <label for="inputEmail3" class="control-label">Informar o CPF:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputEmail3" placeholder="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required="">
+                  <input type="text" name="cpf" class="form-control" id="inputEmail3" placeholder="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
                 </div>
               </div>
               <div class="form-group">
@@ -39,7 +39,7 @@
                   <label for="inputNome" class="control-label">Informar o NOME:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputNome" placeholder="Nome">
+                  <input type="text" name="nome" class="form-control" id="inputNome" placeholder="Nome" required>
                 </div>
               </div>
               <div class="form-group">
@@ -47,14 +47,10 @@
                   <label for="inputEMAIL" class="control-label">Informar o EMAIL:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputEMAIL" placeholder="E-mail">
+                  <input type="email" name="email" class="form-control" id="inputEMAIL" placeholder="E-mail" required>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-danger">Casatrar</button>
-                </div>
-              </div>
+              <button type="submit" class="btn btn-danger">Cadastrar</button>
             </form>
           </div>
         </div>
