@@ -36,24 +36,70 @@ public class Controlador extends HttpServlet {
 		
 		idFormulario = Integer.parseInt(request.getParameter("idFormulario"));
 		tipoFormulario = Integer.parseInt(request.getParameter("tipoFormulario"));
+		String cpfMascara;
+		long cpf;
+		String nome, email;
 		
 		switch (idFormulario) {
-		case 1: {//Clientes
-					
-			break;
-		}
-		case 2: {//Cursos
-			
-			break;
-		}
-		case 3: {//Pagamentos
-			
-			break;
-		}
-		default:
-			throw new IllegalArgumentException("Formulario invalido");
-		}
-			
+			case 1: {//Clientes
+				switch (tipoFormulario) {
+					case 11: { //Consultar todos
+						
+						break;
+					}
+					case 12: { //Consultar
+						cpfMascara = request.getParameter("cpf");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						
+						out.println("<h2>Clientes => Consultar =>"+cpf+" </h2>");
+						break;
+					}
+					case 13: { //Cadastrar
+						cpfMascara = request.getParameter("cpf");
+						nome = request.getParameter("nome");
+						email = request.getParameter("email");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						
+						out.println("<h2>Clientes => Cadastrar =>"+cpf+"-"+nome+"-"+email+"</h2>");
+						break;
+					}
+					case 14: { //Alterar
+						cpfMascara = request.getParameter("cpf");
+						nome = request.getParameter("nome");
+						email = request.getParameter("email");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						
+						out.println("<h2>Clientes => Alterar =>"+cpf+"-"+nome+"-"+email+"</h2>");
+						break;
+					}
+					case 15: { //Excluir
+						cpfMascara = request.getParameter("cpf");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						
+						out.println("<h2>Clientes => Excluir =>"+cpf+" </h2>");
+						break;
+					}
+					default:
+						throw new IllegalArgumentException("Tipo de formulario invalido");
+				}
+				
+				break;
+			}
+			case 2: {//Cursos
+				
+				break;
+			}
+			case 3: {//Pagamentos
+				
+				break;
+			}
+			default:
+				throw new IllegalArgumentException("Formulario invalido");
+		}			
 	}
 
 }

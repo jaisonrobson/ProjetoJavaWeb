@@ -25,7 +25,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
               <div class="form-group">
                 <div class="col-sm-3">
                   <label for="inputCPF" class="control-label">Informar o CPF a ser EXCLUÍDO:</label>
@@ -34,6 +34,8 @@
                   <input type="text" name="cpf" class="form-control" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
                 </div>
               </div>
+              	<input type="hidden" name="idFormulario" value="1">
+                <input type="hidden" name="tipoFormulario" value="15">
               	<button type="submit" class="btn btn-danger">Excluir</button>
             </form>
           </div>
