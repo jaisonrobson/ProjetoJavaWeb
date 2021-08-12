@@ -25,7 +25,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
               <div class="form-group">
                 <div class="col-sm-2">
                   <label for="inputCURSO" class="control-label">Informar o CURSO:</label>
@@ -58,6 +58,8 @@
                   <input type="url" name="site" class="form-control" id="inputSITE" placeholder="Site" required>
                 </div>
               </div>
+              <input type="hidden" name="idFormulario" value="2">
+              <input type="hidden" name="tipoFormulario" value="23">
                   <button type="submit" class="btn btn-danger">Cadastrar</button>
             </form>
           </div>

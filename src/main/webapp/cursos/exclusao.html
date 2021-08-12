@@ -25,7 +25,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
               <div class="form-group">
                 <div class="col-sm-3">
                   <label for="inputCPF" class="control-label">Informar o CURSO a ser EXCLUÍDO:</label>
@@ -34,6 +34,8 @@
                   <input type="number" name="cdcurso" class="form-control" id="inputCPF" placeholder="CURSO" required>
                 </div>
               </div>
+              <input type="hidden" name="idFormulario" value="2">
+              <input type="hidden" name="tipoFormulario" value="25">
                   <button type="submit" class="btn btn-danger">Excluír</button>
             </form>
           </div>

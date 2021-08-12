@@ -36,9 +36,8 @@ public class Controlador extends HttpServlet {
 		
 		idFormulario = Integer.parseInt(request.getParameter("idFormulario"));
 		tipoFormulario = Integer.parseInt(request.getParameter("tipoFormulario"));
-		String cpfMascara;
-		long cpf;
-		String nome, email;
+		String nome, email, site, cpfMascara, nomeCurso;
+		long cpf, cdCurso, valorCurso;
 		
 		switch (idFormulario) {
 			case 1: {//Clientes
@@ -90,6 +89,44 @@ public class Controlador extends HttpServlet {
 				break;
 			}
 			case 2: {//Cursos
+				switch (tipoFormulario) {
+					case 21: { //Consultar todos
+						
+						break;
+					}
+					case 22: { //Consultar
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						
+						out.println("<h2>Cursos => Consultar =>"+cdCurso+" </h2>");
+						break;
+					}
+					case 23: { //Cadastrar
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						nomeCurso = request.getParameter("nome");
+						valorCurso = Long.parseLong(request.getParameter("valor"));
+						site = request.getParameter("site");
+						
+						out.println("<h2>Cursos => Cadastrar =>"+cdCurso+"-"+nomeCurso+"-"+valorCurso+"-"+site+"</h2>");
+						break;
+					}
+					case 24: { //Alterar
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						nomeCurso = request.getParameter("nome");
+						valorCurso = Long.parseLong(request.getParameter("valor"));
+						site = request.getParameter("site");
+						
+						out.println("<h2>Cursos => Alterar =>"+cdCurso+"-"+nomeCurso+"-"+valorCurso+"-"+site+"</h2>");
+						break;
+					}
+					case 25: { //Excluir
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						
+						out.println("<h2>Cursos => Excluir =>"+cdCurso+" </h2>");
+						break;
+					}
+					default:
+						throw new IllegalArgumentException("Tipo de formulario invalido");
+				}
 				
 				break;
 			}
