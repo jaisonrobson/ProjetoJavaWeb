@@ -2,6 +2,8 @@ package controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +38,7 @@ public class Controlador extends HttpServlet {
 		
 		idFormulario = Integer.parseInt(request.getParameter("idFormulario"));
 		tipoFormulario = Integer.parseInt(request.getParameter("tipoFormulario"));
-		String nome, email, site, cpfMascara, nomeCurso;
+		String nome, email, site, cpfMascara, nomeCurso, dataInscricao;
 		long cpf, cdCurso, valorCurso;
 		
 		switch (idFormulario) {
@@ -131,6 +133,59 @@ public class Controlador extends HttpServlet {
 				break;
 			}
 			case 3: {//Pagamentos
+				switch (tipoFormulario) {
+					case 31: { //Consultar todos
+						
+						break;
+					}
+					case 32: { //Consultar
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						cpfMascara = request.getParameter("cpf");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						
+						out.println("<h2>Pagamentos => Consultar =>"+cdCurso+"-"+cpf+" </h2>");
+						break;
+					}
+					case 33: { //Cadastrar
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						cpfMascara = request.getParameter("cpf");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						
+						dataInscricao = request.getParameter("datainscricao");
+						DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+						LocalDate date = LocalDate.parse(dataInscricao, formatter);
+						DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+						
+						out.println("<h2>Pagamentos => Cadastrar =>"+cdCurso+"-"+cpf+"-"+fmt.format(date)+"</h2>");
+						break;
+					}
+					case 34: { //Alterar
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						cpfMascara = request.getParameter("cpf");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						dataInscricao = request.getParameter("datainscricao");
+						DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+						LocalDate date = LocalDate.parse(dataInscricao, formatter);
+						DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+						
+						out.println("<h2>Pagamentos => Alterar =>"+cdCurso+"-"+cpf+"-"+fmt.format(date)+"</h2>");
+						break;
+					}
+					case 35: { //Excluir
+						cdCurso = Long.parseLong(request.getParameter("cdcurso"));
+						cpfMascara = request.getParameter("cpf");
+						cpfMascara = cpfMascara.replaceAll("[.-]", "");
+						cpf = Long.parseLong(cpfMascara);
+						
+						out.println("<h2>Pagamentos => Excluir =>"+cdCurso+"-"+cpf+" </h2>");
+						break;
+					}
+					default:
+						throw new IllegalArgumentException("Tipo de formulario invalido");
+				}
 				
 				break;
 			}
