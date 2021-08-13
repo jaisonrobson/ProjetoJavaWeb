@@ -1,3 +1,5 @@
+<jsp:include page="../util/topo.jsp" />
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +22,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; PAGAMENTOS - EXCLUIR UM PAGAMENTO &lt;&lt;</h3>
+            <h3 class="tt_menu">&gt;&gt; PAGAMENTOS - ALTERAR UM PAGAMENTO &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
@@ -28,7 +30,7 @@
             <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="inputCPF" class="control-label">Informar o CPF a ser EXCLUÍDO::</label>
+                  <label for="inputCPF" class="control-label">Informar o CPF:</label>
                 </div>
                 <div class="col-sm-9">
                   <input type="text" name="cpf" class="form-control" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
@@ -36,16 +38,33 @@
               </div>
               <div class="form-group">
                 <div class="col-sm-3">
-                  <label for="inputCURSO" class="control-label">Informar o CURSO a ser EXCLUÍDO:</label>
+                  <label for="inputCURSO" class="control-label">Informar o CURSO:</label>
                 </div>
                 <div class="col-sm-9">
                   <input type="number" name="cdcurso" class="form-control" id="inputCURSO" placeholder="CURSO" required>
                 </div>
               </div>
-	              <input type="hidden" name="idFormulario" value="3">
-	              <input type="hidden" name="tipoFormulario" value="35">
-                  <button type="submit" class="btn btn-danger">Excluir</button>
+              <div class="form-group">
+                <div class="col-sm-3">
+                  <label for="inputDATA" class="control-label">Informar a NOVA DATA DE INSCRIÇÃO:</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="date" name="datainscricao" class="form-control" id="inputDATA" title="Preencha o campo Nome" required>
+                </div>
+              </div>
+              		<input type="hidden" name="idFormulario" value="3">
+	              	<input type="hidden" name="tipoFormulario" value="34">
+                  <button type="submit" class="btn btn-danger">Alterar</button>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center corrigir">
+            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
           </div>
         </div>
       </div>
@@ -59,15 +78,6 @@
         </div>
       </div>
     </footer>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center corrigir">
-            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
-          </div>
-        </div>
-      </div>
-    </div>
   
 
 </body></html>

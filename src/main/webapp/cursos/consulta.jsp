@@ -1,3 +1,5 @@
+<jsp:include page="../util/topo.jsp" />
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,23 +22,24 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; CURSOS &lt;&lt;</h3>
-            <div class="col-md-12  btn-group btn-group-lg btn-group-vertical">
-              <a href="#" class="btn btn-default">Consultar Todos os Cursos</a>
-              <a href="consulta.html" class="btn btn-default">Consultar um Curso Específico</a>
-              <a href="cadastro.html" class="btn btn-default">Cadastrar um Novo Curso</a>
-              <a href="alteracao.html" class="btn btn-default">Alterar um Curso</a>
-              <a href="exclusao.html" class="btn btn-default">Excluir um Curso</a>
-            </div>
+            <h3 class="tt_menu">&gt;&gt; CURSOS - CONSULTA &lt;&lt;</h3>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center corrigir">
-            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
+          <div class="col-md-12">
+            <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
+              <div class="form-group">
+                <div class="col-sm-2">
+                  <label for="inputEmail3" class="control-label">Informar o CURSO:</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="number" name="cdcurso" class="form-control" id="inputEmail3" placeholder="CURSO" required>
+                </div>
+              </div>
+              <input type="hidden" name="idFormulario" value="2">
+              <input type="hidden" name="tipoFormulario" value="22">
+                  <button type="submit" class="btn btn-danger">Consultar</button>
+            </form>
           </div>
         </div>
       </div>
@@ -50,6 +53,15 @@
         </div>
       </div>
     </footer>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center corrigir">
+            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
+          </div>
+        </div>
+      </div>
+    </div>
   
 
 </body></html>

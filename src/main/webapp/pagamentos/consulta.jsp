@@ -1,3 +1,5 @@
+<jsp:include page="../util/topo.jsp" />
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +22,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; CURSOS - CADASTRAR UM NOVO CURSO &lt;&lt;</h3>
+            <h3 class="tt_menu">&gt;&gt; PAGAMENTOS - CONSULTAR UM NOVO PAGAMENTO &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
@@ -28,49 +30,24 @@
             <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
               <div class="form-group">
                 <div class="col-sm-2">
+                  <label for="inputCPF" class="control-label">Informar o CPF:</label>
+                </div>
+                <div class="col-sm-10">
+                  <input type="text" name="cpf" class="form-control" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-2">
                   <label for="inputCURSO" class="control-label">Informar o CURSO:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="text" name="cdcurso" class="form-control" id="inputCURSO" placeholder="Curso" required>
+                  <input type="number" name="cdcurso" class="form-control" id="inputCURSO" placeholder="CURSO" required>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputNome" class="control-label">Informar o NOME:</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="text" name="nome" class="form-control" id="inputNome" placeholder="Nome" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputVALOR" class="control-label">Informar o VALOR:</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="number" name="valor" class="form-control" id="inputVALOR" placeholder="Valor" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputSITE" class="control-label">Informar o SITE:</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="url" name="site" class="form-control" id="inputSITE" placeholder="Site" required>
-                </div>
-              </div>
-              <input type="hidden" name="idFormulario" value="2">
-              <input type="hidden" name="tipoFormulario" value="23">
-                  <button type="submit" class="btn btn-danger">Cadastrar</button>
+              	<input type="hidden" name="idFormulario" value="3">
+	              <input type="hidden" name="tipoFormulario" value="32">
+                  <button type="submit" class="btn btn-danger">Consultar</button>
             </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center corrigir">
-            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
           </div>
         </div>
       </div>
@@ -84,6 +61,15 @@
         </div>
       </div>
     </footer>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center corrigir">
+            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
+          </div>
+        </div>
+      </div>
+    </div>
   
 
 </body></html>
