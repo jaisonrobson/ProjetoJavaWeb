@@ -26,7 +26,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
+            <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/util/autenticacao.jsp" method="post">
               <div class="form-group">
                 <div class="col-sm-2">
                   <label for="inputEmail3" class="control-label">Informar o CPF:</label>
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    ${ mensagem }
+    <p style="text-align: center; color: red;">${ mensagem }</p>
     <div class="section">
       <div class="container">
         <div class="row">

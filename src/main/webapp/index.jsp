@@ -32,6 +32,17 @@
         </div>
       </div>
     </div>
+    
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+          	<a class="btn btn-default" href="http://localhost/ProjetoWEB/logout.jsp">Sair</a>          
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="navbar navbar-fixed-bottom bgred">
         <div class="container">

@@ -1,3 +1,5 @@
+<jsp:include page="../util/topo.jsp" />
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,23 +22,24 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; CLIENTES &lt;&lt;</h3>
-            <div class="col-md-12  btn-group btn-group-lg btn-group-vertical">
-              <a href="#" class="btn btn-default">Consultar Todos os Clientes</a>
-              <a href="consulta.html" class="btn btn-default">Consultar um Cliente Específico</a>
-              <a href="cadastro.html" class="btn btn-default">Cadastrar um Novo Cliente</a>
-              <a href="alteracao.html" class="btn btn-default">Alterar um Cliente</a>
-              <a href="exclusao.html" class="btn btn-default">Excluir um Cliente</a>
-            </div>
+            <h3 class="tt_menu">&gt;&gt; CLIENTES - EXCLUIR UM CLIENTE &lt;&lt;</h3>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
         <div class="row">
-          <div class="col-md-12 text-center corrigir">
-            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
+          <div class="col-md-12">
+            <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
+              <div class="form-group">
+                <div class="col-sm-3">
+                  <label for="inputCPF" class="control-label">Informar o CPF a ser EXCLUÍDO:</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" name="cpf" class="form-control" id="inputCPF" placeholder="CPF" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
+                </div>
+              </div>
+              	<input type="hidden" name="idFormulario" value="1">
+                <input type="hidden" name="tipoFormulario" value="15">
+              	<button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
           </div>
         </div>
       </div>
@@ -50,6 +53,15 @@
         </div>
       </div>
     </footer>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center corrigir">
+            <a class="btn btn-default" href="javascript:window.history.go(-1)">Voltar</a>
+          </div>
+        </div>
+      </div>
+    </div>
   
 
 </body></html>

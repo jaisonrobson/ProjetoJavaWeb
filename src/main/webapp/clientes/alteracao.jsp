@@ -1,3 +1,5 @@
+<jsp:include page="../util/topo.jsp" />
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +22,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; CLIENTES - Cadastro &lt;&lt;</h3>
+            <h3 class="tt_menu">&gt;&gt; CLIENTES - ALTERAR UM CLIENTE &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
@@ -47,12 +49,12 @@
                   <label for="inputEMAIL" class="control-label">Informar o EMAIL:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="email" name="email" class="form-control" id="inputEMAIL" placeholder="E-mail" required>
+                  <input type="email" name="email" class="form-control" id="inputEMAIL" placeholder="E-mail">
                 </div>
               </div>
               <input type="hidden" name="idFormulario" value="1">
-              <input type="hidden" name="tipoFormulario" value="13">
-              <button type="submit" class="btn btn-danger">Cadastrar</button>
+              <input type="hidden" name="tipoFormulario" value="14">
+              <button type="submit" class="btn btn-danger">Alterar</button>
             </form>
           </div>
         </div>

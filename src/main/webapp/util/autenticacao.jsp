@@ -24,9 +24,9 @@
 <jsp:scriptlet>
 	String cpfmask = request.getParameter("cpf");
 	cpfmask = cpfmask.replaceAll("[.-]", "");
-	long cpf = Long.parseLong(cpfmask);
 	String senha = request.getParameter("senha");		
-	String consulta = "SELECT * FROM login WHERE cpf ='"+ cpf +"' AND senha='"+senha+"'";	
+	String consulta = "SELECT * FROM login WHERE cpf ='"+ cpfmask +"' AND senha='"+senha+"'";
+	
 	Statement statement;
 	
 	try {
@@ -34,12 +34,14 @@
 		ResultSet rs = statement.executeQuery(consulta);
 		
 		if(rs.next()) {
-			session.setAttribute("mensagem", "Usuario autenticado");
-			response.sendRedirect("sucesso.jsp");
+			session.setAttribute("mensagem", "Usuario autenticado");			
+			session.setAttribute("login", "true");
+			response.sendRedirect("../index.jsp");
 		}
 		else {
 			session.setAttribute("mensagem", "Usuario inexistente ou invalido");
-			response.sendRedirect("login.jsp");
+			session.setAttribute("login", "false");
+			response.sendRedirect("../login.jsp");
 		}
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
